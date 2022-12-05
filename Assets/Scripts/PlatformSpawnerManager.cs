@@ -12,13 +12,7 @@ public class PlatformSpawnerManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < spawners.Length; i++)
-        {
-            spawners[i].Initialize();
-
-            spawners[i].RandomizePlatforms();
-        }
-            StartCoroutine(CheckPlayerDistance());
+        StartCoroutine(CheckPlayerDistance());
     }
 
     IEnumerator CheckPlayerDistance()
@@ -27,7 +21,7 @@ public class PlatformSpawnerManager : MonoBehaviour
         {
            for (int i = 0; i < spawners.Length; i++) //bucle infito para las platformas
            {
-                if(spawners[i].transform.position.y < player.position.y &&(spawners[i].transform.position - player.position).sqrMagnitude > playerCheckDistance * playerCheckDistance)//Se activa cuando el jugador esta por encima.
+                if (spawners[i].transform.position.y < player.position.y && (spawners[i].transform.position - player.position).sqrMagnitude > playerCheckDistance * playerCheckDistance)//Se activa cuando el jugador esta por encima.
                 {
                     spawners[i].transform.position += Vector3.up * spawnerMovment;
                     spawners[i].RandomizePlatforms();//llama a la funcion de platform spawner para que se sigan randomizando

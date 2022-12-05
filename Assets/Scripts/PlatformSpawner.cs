@@ -10,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] float platformDistance;
     [SerializeField] Color gizmoColor;
 
-    [SerializeField] GameObject platform;
+    [SerializeField] GameObject[] platform;
 
     private float halfHeight; //alto
     private float halfWidht; //ancho
@@ -22,38 +22,27 @@ public class PlatformSpawner : MonoBehaviour
          halfHeight = boxHeight * 0.5f;
          halfWidht = boxWidht * 0.5f;
     }
-
-    /*
-    private void Start()
-    {
-        Initialize();
-
-        RandomizePlatforms();
-    }
-    */
-
-    public void Initialize()
+    public void Start()
     {
         Debug.Assert(platforms.Count < 1, "Ya");
 
-        Debug.Log("instancia");
-
         for (float i = transform.position.y - halfHeight; i < transform.position.y + halfHeight; i += platformDistance)
-            platforms.Add(Instantiate(platform, transform));
+            //int platformType = Random.Range(0, 2);
+            platforms.Add(Instantiate(platform[Random.Range(0, platform.Length)], transform));
+
+        RandomizePlatforms();
     }
 
     public void RandomizePlatforms()
     {
         Debug.Assert(platforms.Count > 1, "No");
 
-        Debug.Log("RANDOMIZA");
-
         int count = 0;
 
         //bucle que recorre todas las distancias de las plataformas
         for (float i = transform.position.y - halfHeight; i < transform.position.y + halfHeight; i += platformDistance)
         {
-            //if (Random.value >= 0.5) return; //7% de probabilidades de que haya plataformas
+            //if (Random.value >= 0.5) return; //50% de probabilidades de que haya plataformas
             platforms[count].transform.position = new Vector3(transform.position.x + Random.Range(-halfWidht, halfWidht), i);//Genera plataformas aleatoriamente dentro de los margenes asignados
             count++;
         }

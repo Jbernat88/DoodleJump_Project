@@ -1,22 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject platformPrefab;
-    public int platformCount = 300;
+    [SerializeField] float playerCheckDelay = 0.5f;
+    [SerializeField] float playerCheckDistance = 10f;
+    [SerializeField] float fallTheshold = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Transform player;
+
+    private float playerMaxHeigh = 0;
+
+    private void Start()
     {
-        Vector3 spawnPosition = new Vector3();
+        StartCoroutine(CheckPlayerDistance());
+    }
 
-        for (int i = 0; i < platformCount; i++)
+    IEnumerator CheckPlayerDistance()
+    { 
+        //Cada vez que el personaje llega al theshold el juego se reinicia la escena
+        while (Application.isPlaying)
         {
-            spawnPosition.y += Random.Range(.5f, 2f);
-            spawnPosition.x += Random.Range(-5f, 2f);
-            Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            if (player.transform.position.y < playerMaxHeigh - fallTheshold)
+                yield return SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+
+
+            playerMaxHeigh = player.transform.position.y;
+
+            yield return new WaitForSeconds(playerCheckDelay);
         }
+
     }
 }
