@@ -226,9 +226,9 @@ MonoBehaviour:
   platform:
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   reactivePlatform: 0
 --- !u!4 &56561469
 Transform:
@@ -463,9 +463,9 @@ MonoBehaviour:
   platform:
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   reactivePlatform: 0
 --- !u!4 &288933116
 Transform:
@@ -957,7 +957,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 1.61598e-40, y: -1e-45, z: 0, w: 1}
+  m_LocalRotation: {x: 1.61203e-40, y: -1e-45, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2821,7 +2821,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e2001d68433e9d74fb6bed10e704272a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -3042,9 +3042,9 @@ MonoBehaviour:
   platform:
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
-  - {fileID: 7723798657342634485, guid: f2f30ec73d9523e44b22729c3768daa5, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
+  - {fileID: 5088177255992144909, guid: cca96fb919aec714ebe42fb20ab6f489, type: 3}
   reactivePlatform: 0
 --- !u!4 &2058213341
 Transform:

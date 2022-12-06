@@ -11,6 +11,7 @@ public class JBM_Record : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // what appears in the text     
         record.text = $"{JBM_DataPersistance.PlayerStats.scoreRecord:F2} m";
     }
 }

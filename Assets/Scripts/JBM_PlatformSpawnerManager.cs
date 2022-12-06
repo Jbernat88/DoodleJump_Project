@@ -7,7 +7,7 @@ public class JBM_PlatformSpawnerManager : MonoBehaviour
     [SerializeField] float playerCheckDelay = 0.5f;
     [SerializeField] float playerCheckDistance = 10f;
     [SerializeField] float spawnerMovment = 30f;
-    [SerializeField] JBM_PlatformSpawner[] spawners;
+    [SerializeField] JBM_PlatformSpawner[] spawners; //Spawners List
     [SerializeField] Transform player;
 
     private void Start()
@@ -19,12 +19,12 @@ public class JBM_PlatformSpawnerManager : MonoBehaviour
     {
         while (Application.isPlaying)
         {
-           for (int i = 0; i < spawners.Length; i++) //bucle infito para las platformas
-           {
-                if (spawners[i].transform.position.y < player.position.y && (spawners[i].transform.position - player.position).sqrMagnitude > playerCheckDistance * playerCheckDistance)//Se activa cuando el jugador esta por encima.
+           for (int i = 0; i < spawners.Length; i++) //Infinite loop that takes the platforms in the scene and moves them randomly.
+            {
+                if (spawners[i].transform.position.y < player.position.y && (spawners[i].transform.position - player.position).sqrMagnitude > playerCheckDistance * playerCheckDistance)//It activates when the player is above it.                   
                 {
-                    spawners[i].transform.position += Vector3.up * spawnerMovment;
-                    spawners[i].RandomizePlatforms();//llama a la funcion de platform spawner para que se sigan randomizando
+                    spawners[i].transform.position += Vector3.up * spawnerMovment;//Move the platform
+                    spawners[i].RandomizePlatforms();//Call the platform spawner function to continue randomizing
                 }
            }
 

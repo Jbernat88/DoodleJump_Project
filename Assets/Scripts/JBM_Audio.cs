@@ -6,6 +6,7 @@ public class JBM_Audio : MonoBehaviour
 {
     private void Awake()
     {
+        //The music stays between scenes
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
         if (musicObj.Length > 1)
         {

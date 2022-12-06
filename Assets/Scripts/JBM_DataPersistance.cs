@@ -11,31 +11,29 @@ public class JBM_DataPersistance : MonoBehaviour
 
     void Awake()
     {
-        // Si la instancia no existe
+        //If the instance does not exist
         if (PlayerStats == null)
         {
-            // Configuramos la instancia
+            //We configure the instance
             PlayerStats = this;
 
-            // Nos aseguramos de que no sea destruida con el cambio de escena
+            //We make sure that it is not destroyed with the change of scene
             DontDestroyOnLoad(PlayerStats);
         }
         else
         {
-            // Como ya existe una instancia, destruimos la copia
+            //Since an instance already exists, we destroy the copy
             Destroy(this);
         }
     }
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
-
-        scoreRecord = PlayerPrefs.GetFloat("Record");
-    
+        scoreRecord = PlayerPrefs.GetFloat("Record");  
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     public void SaveStats()
     {
         PlayerPrefs.SetFloat("Record", scoreRecord);

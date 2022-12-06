@@ -7,7 +7,7 @@ public class JBM_GameManager : MonoBehaviour
 {
     [SerializeField] float playerCheckDelay = 0.5f;
     [SerializeField] float playerCheckDistance = 10f;
-    [SerializeField] float fallTheshold = 3;
+    [SerializeField] float fallTheshold = 3; //Fall margin
 
     [SerializeField] Transform player;
 
@@ -17,14 +17,15 @@ public class JBM_GameManager : MonoBehaviour
 
     private void Start()
     {
+        //Call the script "JBM_Score_UI"
         scoreUIScript = GameObject.Find("UI").GetComponent<JBM_Score_UI>();
 
         StartCoroutine(CheckPlayerDistance());
     }
 
     IEnumerator CheckPlayerDistance()
-    { 
-        //Cada vez que el personaje llega al theshold el juego se reinicia la escena
+    {
+        //Every time the character reaches theshold the game restarts the scene
         while (Application.isPlaying)
         {
             
@@ -34,17 +35,14 @@ public class JBM_GameManager : MonoBehaviour
                 {
                     scoreUIScript.UpdateScore();
                 }
-              
-                yield return SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+
+                //Reloads the scene I'm in
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);                                                                    
             }
-
-
                 playerMaxHeigh = player.transform.position.y;
 
             yield return new WaitForSeconds(playerCheckDelay);
         }
-
     }
-
-
 }

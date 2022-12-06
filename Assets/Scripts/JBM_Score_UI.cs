@@ -19,20 +19,22 @@ public class JBM_Score_UI : MonoBehaviour
 
     public AudioSource button;
 
+    public GameObject vignete;
+
     void Start()
     {
-        panel.SetActive(false);//el pasue esta desactivado
-        isPaused = false;
+        vignete.SetActive(false);//The vignet is desactived at the start
+        panel.SetActive(false);//The panel is desactived at the start
+        isPaused = false;//The pause is desactived at the start
     }
     private void Update()
     {
         record.text = $"{JBM_DataPersistance.PlayerStats.scoreRecord:F2} m";
 
-        if (playerMaxHeigh < player.transform.position.y)//El Score depende de la altura del Player.
+        if (playerMaxHeigh < player.transform.position.y)//The Score depends on the height of the Player.            
         {
             playerMaxHeigh = player.transform.position.y;
             score.text = $"{playerMaxHeigh:F2} m";
-
         }
     }
 
@@ -43,20 +45,24 @@ public class JBM_Score_UI : MonoBehaviour
 
     public void PauseGame()
     {
-        panel.SetActive(!panel.activeInHierarchy); //activa o desaciva el paenl.
+        panel.SetActive(!panel.activeInHierarchy); //active or desacive the paenl.
 
         if (isPaused == false) //pause
         {
+            vignete.SetActive(true);
             Time.timeScale = 0;
             isPaused = true;
         }
-        else //despause
+        else //break
         {
             Time.timeScale = 1;
             isPaused = false;
+            vignete.SetActive(false);
         }
 
         button.Play();
+
+
     }
 }
 

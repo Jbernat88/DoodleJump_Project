@@ -8,7 +8,7 @@ public class JBM_Camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player");//follow the player
     }
 
     // Update is called once per frame
