@@ -7,6 +7,12 @@ public class JBM_SceneManagment : MonoBehaviour
 {
     public void MainMenu()
     {
-        SceneManager.LoadScene("mainMenu");
+        SceneManager.LoadScene("JBM_mainMenu");
+        Time.timeScale = 1;
+    }
+
+    public void Game()
+    {
+        SceneManager.LoadScene("JBM_Game");
     }
 }
