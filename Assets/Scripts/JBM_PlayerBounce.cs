@@ -14,6 +14,8 @@ public class JBM_PlayerBounce : MonoBehaviour
     //Gizmos
     [Header("Gizmos")]
     [SerializeField] Color color;
+    //Particles
+    public ParticleSystem cloud;
 
 
     Rigidbody2D playerRigidbody;
@@ -43,6 +45,8 @@ public class JBM_PlayerBounce : MonoBehaviour
             if (ray.collider.gameObject.tag.Equals("Cloud"))
             {
                 ray.collider.gameObject.SetActive(false);
+
+                cloud = Instantiate(cloud, transform.position, cloud.transform.rotation);
             }
         }
     }

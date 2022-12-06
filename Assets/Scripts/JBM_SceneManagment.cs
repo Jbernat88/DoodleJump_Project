@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class JBM_SceneManagment : MonoBehaviour
 {
+    public AudioSource button;
     public void MainMenu()
     {
         SceneManager.LoadScene("JBM_mainMenu");
         Time.timeScale = 1;
+
+        button.Play();
     }
 
     public void Game()
     {
         SceneManager.LoadScene("JBM_Game");
+
+        button.Play();
     }
 }

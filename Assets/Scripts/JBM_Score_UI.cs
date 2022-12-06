@@ -17,11 +17,12 @@ public class JBM_Score_UI : MonoBehaviour
 
     [SerializeField] TMPro.TMP_Text record;
 
+    public AudioSource button;
+
     void Start()
     {
         panel.SetActive(false);//el pasue esta desactivado
         isPaused = false;
-
     }
     private void Update()
     {
@@ -54,6 +55,8 @@ public class JBM_Score_UI : MonoBehaviour
             Time.timeScale = 1;
             isPaused = false;
         }
+
+        button.Play();
     }
 }
 

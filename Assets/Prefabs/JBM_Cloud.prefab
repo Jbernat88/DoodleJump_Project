@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2831918942582544644}
   - component: {fileID: 962622643083785163}
   - component: {fileID: 6140615186541667937}
-  - component: {fileID: 4782426059567163758}
+  - component: {fileID: -7369935526293919331}
   m_Layer: 6
   m_Name: JBM_Cloud
   m_TagString: Cloud
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.195152, y: 13.03025}
   m_EdgeRadius: 0
---- !u!114 &4782426059567163758
+--- !u!114 &-7369935526293919331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

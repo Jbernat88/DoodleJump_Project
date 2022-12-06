@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class JBM_Cloud : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log("si");
-        Destroy(gameObject);
-    }
-    // Start is called before the first frame update
+    private JBM_PlatformSpawner platformSpawnerScript;
 
+    private void Start()
+    {
+       platformSpawnerScript = GameObject.Find("PlatformSpawner").GetComponent<JBM_PlatformSpawner>();
+    }
+
+    private void Update()
+    {
+        if (platformSpawnerScript.reactivePlatform)
+        {
+            gameObject.SetActive(true);
+            platformSpawnerScript.reactivePlatform = false;
+        }
+    }
+ 
 }

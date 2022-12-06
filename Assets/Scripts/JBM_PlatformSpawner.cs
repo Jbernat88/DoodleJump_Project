@@ -17,6 +17,8 @@ public class JBM_PlatformSpawner : MonoBehaviour
 
     private List<GameObject> platforms = new List<GameObject>();//Lista
 
+    public bool reactivePlatform;
+
     private void Awake()
     {
          halfHeight = boxHeight * 0.5f;
@@ -45,6 +47,8 @@ public class JBM_PlatformSpawner : MonoBehaviour
             //if (Random.value >= 0.5) return; //50% de probabilidades de que haya plataformas
             platforms[count].transform.position = new Vector3(transform.position.x + Random.Range(-halfWidht, halfWidht), i);//Genera plataformas aleatoriamente dentro de los margenes asignados
             count++;
+
+            reactivePlatform = true;
         }
     }
     private void OnDrawGizmos()//Dibuja parametros en escena
